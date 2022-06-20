@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
-    'cloudinary_storage',
     'dashboard',
     'users',
     
@@ -129,11 +128,6 @@ cloudinary.config(
   api_secret = "bsWPFV4bZyvD622FrctRKVd18kc" 
 )
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME' : "dzhpqlsy9",
-    'API_KEY' : "385765168628523",
-    'API_SECRET' : "bsWPFV4bZyvD622FrctRKVd18kc",
-}
 
 STATIC_URL = 'static/'
 
