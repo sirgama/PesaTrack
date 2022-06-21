@@ -8,6 +8,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to = 'profile/')
+    name = models.CharField(blank=True, max_length=120)
     bio=models.CharField(max_length=60)
     email = models.EmailField(max_length=100, blank=True)
    
