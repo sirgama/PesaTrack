@@ -5,14 +5,34 @@
 <div class="">
 <div class="container-fluid ">
     <div class="row">
-        <div class="col-md-2">
-            <h3>test</h3>
+        <div class="col-md-2 prof">
+            <div class="container text-center mt-5 ">
+                
+                <img src="{% static 'assets/dummy.jpg' %}" height="130" width="130" alt="" class="img-fluid rounded-circle ms-md-2">
+                <h4 class="fw-bold mt-2"> Sarah Ben</h4>
+                <h6 class="mt-4 fw-bold text-muted">@sarahben</h6>
+                <p class="fw-bold text-muted">sarahben@gmail.com</p>
+                <p class="mt-5 text-start text-muted fw-bold"><small class="text-muted">MAIN MENU</small> </p>
+                <h5 class="mt-4 text-start m-5  menu"><i class="fa-solid fa-table-columns"></i>  Dashboard</h5>
+                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-chart-line"></i>  Expenses</h5>
+                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-gauge-high"></i>  Analytics</h5>
+                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-gear"></i>  Settings</h5>
+                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-right-from-bracket"></i>  Logout</h5>
+
+            </div>
         </div>
+
+
+
+
+        <!-- DASHBOARD SECTION STARTS HERE -->
+
+
         <div class="col-md-10 dash">
-            <div class="container mt-2">
-                <nav class="navbar navbar-expand-lg bg-none">
+            <div class=" mt-5">
+                <nav class="navbar mb-5 navbar-expand-lg bg-none">
                     <div class="container-fluid">
-                      <a class="navbar-brand fw-bold" href="#">Dashboard</a>
+                      <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-table-columns"></i>  Dashboard</a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
@@ -22,7 +42,7 @@
                             <a class="nav-link active" aria-current="page" href="#"></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">24th June 2022</a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-clock"></i>  24th June 2022</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#"></a>
@@ -33,10 +53,10 @@
                               <a class="nav-link active" aria-current="page" href="#"></a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link mt-2" href="#">Export</a>
+                              <a class="nav-link mt-2" href="#"><i class="fa-solid fa-download"></i> Export</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#"><button class="button-18" role="button">+ Add Income</button></a>
+                              <a class="nav-link" href="#"><button class="button-18" role="button"><i class="fa-solid fa-plus"></i> Add Income</button></a>
                             </li>
                           </ul>
                         <span class="nav-item">
@@ -74,9 +94,9 @@
                         <div class="col">
                             <div class=" card2 card" style="width: 18rem;">
                                 <div class="card-body">
-                                  <h5 class="card-title">Total Income</h5>
+                                  <h5 class="card-title">Income - Expenditure</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">10000</p></div></p>
+                                  <p class="card-text text-center"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">10000</p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -88,9 +108,10 @@
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
                                   <p class="card-text"> 
                                     <ul>
-                                        <li class="mt-md-3">Food</li>
-                                        <li class="mt-md-3">Transport</li>
-                                        <li class="mt-md-3">Impulse</li>
+                                        <li class="mt-md-3"><i class="fa-solid fa-burger"></i> Food</li>
+                                        <li class="mt-md-3"><i class="fa-solid fa-car-side"></i>  Transport</li>
+                                        <li class="mt-md-3"><i class="fa-solid fa-mobile-screen"></i>  Data/airtime</li>
+                                        <li class="mt-md-3"><i class="fa-solid fa-face-surprise"></i>  Impulse</li>
                                     </ul>
                                   </p>
 
@@ -101,7 +122,7 @@
 
                     </div>
                     <div class="container card card3 mt-5">
-                        <h4 class="mt-4 mb-4">Recent Expenses</h4>
+                        <h4 class="mt-4 mb-4"><i class="fa-solid fa-chart-line"></i>  Recent Expenses</h4>
 
                         <div class="card card3">
                             <table class="table ">
@@ -111,6 +132,7 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Amount</th>
+                                    <th scope="col">Date</th>
                                   </tr>
                                 </thead>
                                 <tbody class="table-group-divider">
@@ -119,17 +141,21 @@
                                     <td>Mark</td>
                                     <td>Otto</td>
                                     <td>@mdo</td>
+                                    <td>@mdo</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">2</th>
                                     <td>Jacob</td>
                                     <td>Thornton</td>
                                     <td>@fat</td>
+                                    <td>@mdo</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
                                     <td>@twitter</td>
+                                    <td>@mdo</td>
                                   </tr>
                                 </tbody>
                               </table>
