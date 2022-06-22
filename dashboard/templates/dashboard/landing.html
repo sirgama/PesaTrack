@@ -1,1 +1,78 @@
-<h1>Landing page</h1>
+{%extends 'dashboard/base.html'%}
+{% block content %}
+{%load static%}
+
+  <div class="container-fluid">
+    <div class="row mx-lg-n5">
+      <div class="col py-3 px-lg-5 border" style="background-color:#E4FAF6;">
+        <h4><b>Welcome to</b></h4>
+        <h1>PesaTrack</h1>
+        <p>PesaTrack is a complete online finance tracker which <br>
+            allows to eep track of your finances be it cash or<br>
+          mobile money. Forget about the days money is gone<br>
+         and you have no idea how it was spent!<br>
+        PesaTrack will sort you on that across devices.</p>
+
+        <button type="button" class="btn btn-dark">GET STARTED FOR FREE</button>
+
+        
+        <div class="row">       
+          <div class="col-sm">
+              <img src="{% static 'images/gram2.png' %}" style ="margin-top:20px; width:80%;">
+          </div>
+          <div class="col-sm">
+              <img src="{% static 'images/gram3.png' %}"  style="margin-top:20px; width:80%;">
+          </div>
+        
+      </div>
+        
+      </div>
+      <div class="col py-3 px-lg-5 border bg-white">
+        <img class="image-fluid" src="{% static 'images/land.png'%}" style="width:100%; padding-top:30px; padding-left:none;" >
+      </div>
+    </div>
+  </div>
+  <style>
+   
+    h4{
+        font-size:30px;
+        margin-top:100px;
+        font-weight:bold;
+    }
+    h1{
+        font-size:60px;
+        font-weight: bold; 
+        color:#05445E;
+       
+    }
+    p{
+        font-weight:bold;
+        color:#05445E;
+    }
+
+    h2{
+        padding-top:150px;
+    }
+
+    .container{
+       
+        padding-top: 30px;
+        
+    }
+    button{
+      border: none;
+    }
+    .btn{
+      border-radius: 40px;
+      font-weight:bold;
+     
+    }
+    .download{
+      padding:0.1rem;
+    }
+  
+  </style>
+
+
+
+{% endblock %}
