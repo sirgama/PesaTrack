@@ -1,0 +1,148 @@
+{% extends 'dashboard/xbase.html' %}
+{% load static %}
+
+{% block content %}
+<div class="">
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-md-2">
+            <h3>test</h3>
+        </div>
+        <div class="col-md-10 dash">
+            <div class="container mt-2">
+                <nav class="navbar navbar-expand-lg bg-none">
+                    <div class="container-fluid">
+                      <a class="navbar-brand fw-bold" href="#">Dashboard</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"></a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">24th June 2022</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                          </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#"></a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link mt-2" href="#">Export</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"><button class="button-18" role="button">+ Add Income</button></a>
+                            </li>
+                          </ul>
+                        <span class="nav-item">
+                          <a href="">
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </nav>
+
+                  <div class="container">
+                    <div class="row row-cols-1 row-cols-md-4">
+                        <div class="col">
+                            <div class="card card2" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title">Total Expenditure</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">7<small class="tsmall">.34</small></p></div></p>
+                                 </div>
+                              </div>
+                        </div>
+
+                        
+
+                        <div class="col">
+                            <div class=" card2 card" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title">Total Income</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">10000</p></div></p>
+                                 </div>
+                              </div>
+                        </div>
+
+                        <div class="col">
+                            <div class=" card2 card" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title">Total Income</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">10000</p></div></p>
+                                 </div>
+                              </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card card2" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title">Popular Categories</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                  <p class="card-text"> 
+                                    <ul>
+                                        <li class="mt-md-3">Food</li>
+                                        <li class="mt-md-3">Transport</li>
+                                        <li class="mt-md-3">Impulse</li>
+                                    </ul>
+                                  </p>
+
+                                  
+                                </div>
+                              </div>
+                        </div>
+
+                    </div>
+                    <div class="container card card3 mt-5">
+                        <h4 class="mt-4 mb-4">Recent Expenses</h4>
+
+                        <div class="card card3">
+                            <table class="table ">
+                                <thead class="table-height">
+                                  <tr>
+                                    <th scope="col">Number</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Amount</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        
+                    </div>
+                    
+
+                  </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

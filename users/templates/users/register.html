@@ -1,4 +1,4 @@
-{% load crispy_forms_tags%} {% block content %} 
+{% block content %} 
 <div class="container"><br><br>
     <div class="row">
         <div class="col-md-3"></div>
@@ -8,7 +8,7 @@
                 {% csrf_token %}
                 <fieldset class="form-group">
                     <legend class="border-bottom mb-4 text-center">Welcome to Pesa Track. Register here </legend>
-                    {{ form|crispy }}
+                    {{ form}}
                  
                 </fieldset>
                 <div class="form-group text-center">
