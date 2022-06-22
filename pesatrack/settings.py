@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'dashboard',
     'users',
+    'crispy_forms',
     
 ]
 
