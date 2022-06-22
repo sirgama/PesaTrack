@@ -1,1 +1,14 @@
-<h2>Profile page</h2>
+{% extends 'users/base.html' %}
+{%load crispy_forms_tags%}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="col-md-3">
+        <img src="{{ profile.image.url }}" class="rounded-circle" alt="">
+        <div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
