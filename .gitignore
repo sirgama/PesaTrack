@@ -1,2 +1,4 @@
 penv
 .env
+virtual/
+__pycache__/
