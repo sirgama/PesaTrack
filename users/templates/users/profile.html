@@ -1,14 +1,52 @@
-{% extends 'users/base.html' %}
-{%load crispy_forms_tags%}
-
-{% block content %}
+{% extends 'users/base.html' %} {%load crispy_forms_tags%} {% block content %}
 <div class="container-fluid">
-    <div class="col-md-3">
-        <img src="{{ profile.image.url }}" class="rounded-circle" alt="">
-        <div>
+  
+    <div class="row">
+      <div class="col-md-4 card mt-3 glassy">
+        <img
+          class="rounded-circle img-responsive text-center"
+          src="{{current_user.profile.image.url}}"
+          alt=""
+          style="max-height: 80px; max-width: 80px"
+        />
+        <h6 class="prf mt-3">Username: {{current_user.username}}</h6>
+        <h6 class="prf mt-3">Name: {{current_user.profile.name}}</h6>
+        <p class="prf mt-3">Email: {{current_user.email}}</p>
+        <p class="prf mt-3">
+          Bio: {{current_user.profile.bio}}
+        </p>
+        
+       
+      </div>
+      <div class="col-md-8 mt-3">
+        <h2>SETTINGS</h2>
 
+        <h3>Hello!</h3>
+
+        <p>You can update your account from here </p>
+       
+        <div class="form">
+            <form
+            class="card glassy p-3"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}  
+
+            {{ profile_form |crispy }}
+            
+            <button
+              type="submit"
+              class="btn btn-lg button-53 mt-5 mb-4 btn-block fw-bold"
+            >
+              Update Profile
+            </button>
+          </form>
         </div>
+          
+        
+      </div>
     </div>
-
+ 
 </div>
 {% endblock %}
