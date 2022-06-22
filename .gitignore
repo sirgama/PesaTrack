@@ -1,3 +1,5 @@
 penv
 .env
 virtual/
+.env/
+__pycache__
