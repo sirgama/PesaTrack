@@ -2,9 +2,9 @@
 {% block content %}
 {%load static%}
 
-  <div class="container-fluid">
+  <div class="container">
     <div class="row mx-lg-n5">
-      <div class="col py-3 px-lg-5 border" style="background-color:#E4FAF6;">
+      <div class="col py-3 px-lg-5  bg-white">
         <h4><b>Welcome to</b></h4>
         <h1>PesaTrack</h1>
         <p>PesaTrack is a complete online finance tracker which <br>
@@ -13,21 +13,21 @@
          and you have no idea how it was spent!<br>
         PesaTrack will sort you on that across devices.</p>
 
-        <button type="button" class="btn btn-dark">GET STARTED FOR FREE</button>
+        <a class="nav-link" href="{%url 'login'%}"><button type="button" class="btn btn-dark mt-5 mb-5">GET STARTED FOR FREE</button></a>
 
         
         <div class="row">       
-          <div class="col-sm">
-              <img src="{% static 'images/gram2.png' %}" style ="margin-top:20px; width:80%;">
+          <div class="col-md-4">
+              <img src="{% static 'images/gram2.png' %}" width="150" height="50">
           </div>
-          <div class="col-sm">
-              <img src="{% static 'images/gram3.png' %}"  style="margin-top:20px; width:80%;">
+          <div class="col-md-4">
+              <img src="{% static 'images/gram3.png' %}" width="150" height="50">
           </div>
         
       </div>
         
       </div>
-      <div class="col py-3 px-lg-5 border bg-white">
+      <div class="col py-3 px-lg-5  bg-white">
         <img class="image-fluid" src="{% static 'images/land.png'%}" style="width:100%; padding-top:30px; padding-left:none;" >
       </div>
     </div>
@@ -54,11 +54,6 @@
         padding-top:150px;
     }
 
-    .container{
-       
-        padding-top: 30px;
-        
-    }
     button{
       border: none;
     }
@@ -67,9 +62,7 @@
       font-weight:bold;
      
     }
-    .download{
-      padding:0.1rem;
-    }
+    
   
   </style>
 
