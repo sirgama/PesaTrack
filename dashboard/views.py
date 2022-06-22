@@ -9,3 +9,7 @@ def landing(request):
 def dashboard(request):
     
     return render(request, 'dashboard/dashboard.html')
+
+def expenses(request):
+    
+    return render(request, 'dashboard/expenses.html')

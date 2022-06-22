@@ -83,6 +83,11 @@ background: linear-gradient(138deg, rgba(212,241,244,1) 0%, rgba(242,227,249,0.7
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     
 }
+.lnk, .menu{
+    text-decoration: none;
+    color: #030137;
+    font-weight: 700;
+}
 .tsmall{
     font-size: 18px;
 }
