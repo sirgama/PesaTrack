@@ -7,9 +7,17 @@ def landing(request):
 
 
 def dashboard(request):
+    current_user = request.user
+    context = {
+        'current_user':current_user
+    }
     
-    return render(request, 'dashboard/dashboard.html')
+    return render(request, 'dashboard/dashboard.html', context)
 
 def expenses(request):
+    current_user = request.user
+    context = {
+        'current_user':current_user
+    }
     
-    return render(request, 'dashboard/expenses.html')
+    return render(request, 'dashboard/expenses.html', context)

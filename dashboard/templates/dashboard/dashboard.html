@@ -8,16 +8,16 @@
         <div class=" col-md-2 prof">
             <div class="container text-center mt-5 ">
                 
-                <img src="{% static 'assets/dummy.jpg' %}" height="130" width="130" alt="" class="img-fluid rounded-circle ms-md-2">
+                <img src="{% static 'assets/dummy.jpg' %}" height="110" width="110" alt="" class="img-fluid rounded-circle ms-md-2">
                 <h4 class="fw-bold mt-2"> Sarah Ben</h4>
-                <h6 class="mt-4 fw-bold text-muted">@sarahben</h6>
-                <p class="fw-bold text-muted">sarahben@gmail.com</p>
+                <h6 class="mt-4 fw-bold text-muted">@{{current_user.username}}</h6>
+                <p class="fw-bold text-muted">{{current_user.email}}</p>
                 <p class="mt-5 text-start text-muted fw-bold"><small class="text-muted">MAIN MENU</small> </p>
-                <h5 class="mt-4 text-start m-5  menu"><i class="fa-solid fa-table-columns"></i> <a class="lnk" href="{% url 'dashboard' %}">Dashboard</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-chart-line"></i> <a class="lnk" href="{% url 'expenses' %}">Expenses</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-gauge-high"></i> <a class="lnk" href="">Analytics</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="">Settings</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="">Logout</a> </h5>
+                <h6 class="mt-4 text-start m-3  menu"><i class="fa-solid fa-table-columns"></i> <a class="lnk" href="{% url 'dashboard' %}">Dashboard</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-chart-line"></i> <a class="lnk" href="{% url 'expenses' %}">Expenses</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gauge-high"></i> <a class="lnk" href="">Analytics</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="">Settings</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="">Logout</a> </h6>
 
             </div>
         </div>
@@ -56,7 +56,7 @@
                               <a class="nav-link mt-2" href="#"><i class="fa-solid fa-download"></i> Export</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#"><button class="button-18" role="button"><i class="fa-solid fa-plus"></i> Add Income</button></a>
+                              <a class="nav-link" href="#"><button class="button-18" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i> Add Income</button></a>
                             </li>
                           </ul>
                         <span class="nav-item">
@@ -74,7 +74,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Total Expenditure</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">7<small class="tsmall">.34</small></p></div></p>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">0</small></p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -86,7 +86,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Total Income</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">10000</p></div></p>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">0</p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -96,7 +96,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Income - Expenditure</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text text-center"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">10000</p></div></p>
+                                  <p class="card-text text-center"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">0</p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -171,4 +171,28 @@
     </div>
 </div>
 </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add income</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 {% endblock %}

@@ -8,16 +8,16 @@
         <div class=" col-md-2 prof">
             <div class="container text-center mt-5 ">
                 
-                <img src="{% static 'assets/dummy.jpg' %}" height="130" width="130" alt="" class="img-fluid rounded-circle ms-md-2">
+                <img src="{% static 'assets/dummy.jpg' %}" height="110" width="110" alt="" class="img-fluid rounded-circle ms-md-2">
                 <h4 class="fw-bold mt-2"> Sarah Ben</h4>
-                <h6 class="mt-4 fw-bold text-muted">@sarahben</h6>
+                <h6 class="mt-4 fw-bold text-muted">@{{current_user.username}}</h6>
                 <p class="fw-bold text-muted">sarahben@gmail.com</p>
                 <p class="mt-5 text-start text-muted fw-bold"><small class="text-muted">MAIN MENU</small> </p>
-                <h5 class="mt-4 text-start m-5  menu"><i class="fa-solid fa-table-columns"></i> <a class="lnk" href="{% url 'dashboard' %}">Dashboard</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-chart-line"></i> <a class="lnk" href="{% url 'expenses' %}">Expenses</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-gauge-high"></i> <a class="lnk" href="">Analytics</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="">Settings</a> </h5>
-                <h5 class="mt-4 text-start m-5 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="">Logout</a> </h5>
+                <h6 class="mt-4 text-start m-3  menu"><i class="fa-solid fa-table-columns"></i> <a class="lnk" href="{% url 'dashboard' %}">Dashboard</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-chart-line"></i> <a class="lnk" href="{% url 'expenses' %}">Expenses</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gauge-high"></i> <a class="lnk" href="">Analytics</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="">Settings</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="">Logout</a> </h6>
 
             </div>
         </div>
@@ -56,7 +56,7 @@
                               <a class="nav-link mt-2" href="#"><i class="fa-solid fa-download"></i> Export</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#"><button class="button-18" role="button"><i class="fa-solid fa-plus"></i> Add Expense</button></a>
+                              <a class="nav-link" href="#"><button class="button-18" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i> Add Expense</button></a>
                             </li>
                           </ul>
                         <span class="nav-item">
@@ -161,4 +161,29 @@
     </div>
 </div>
 </div>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add Expense</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 {% endblock %}
