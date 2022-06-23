@@ -105,7 +105,7 @@
                                 </thead>
                                 <tbody class="table-group-divider">
                                   {% if expenses %}
-                                    {% for expense in expenses %}
+                                    {% for expense in expenses|slice:":14"  %}
                                     <tr>
                                     
                                     

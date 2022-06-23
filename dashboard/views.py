@@ -75,13 +75,26 @@ def expenses(request):
 @login_required
 def search(request):
     current_user = request.user
+    if request.method == 'POST':
+        form = NewExpenditureForm(request.POST)
+        if form.is_valid():
+            Expenses.user_id = request.user
+            description = form.cleaned_data.get('description')
+            amount = form.cleaned_data.get('amount')
+            category = form.cleaned_data.get('category')
+            
+            p, created = Expenses.objects.get_or_create(description=description, amount=amount, category=category, user=current_user)
+            form.save(commit=False)
+            return redirect('expenses')
+    else:
+        form = NewExpenditureForm()
     if 'exp' in request.GET and request.GET["exp"]:
         search_term = request.GET.get("exp")
         searched_expenses = Expenses.search_by_description(search_term)
         message = f"{search_term}"
 
-        return render(request, 'dashboard/search.html',{"message":message,"expenses": searched_expenses,'current_user':current_user})
+        return render(request, 'dashboard/search.html',{"message":message,"expenses": searched_expenses,'current_user':current_user,'form':form,})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'dashboard/search.html',{"message":message,'current_user':current_user,})
+        return render(request, 'dashboard/search.html',{"message":message,'current_user':current_user,'form':form,})
