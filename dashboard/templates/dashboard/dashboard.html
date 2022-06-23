@@ -20,7 +20,7 @@
                 <h6 class="mt-4 text-start m-3  menu"><i class="fa-solid fa-table-columns"></i> <a class="lnk" href="{% url 'dashboard' %}">Dashboard</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-chart-line"></i> <a class="lnk" href="{% url 'expenses' %}">Expenses</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gauge-high"></i> <a class="lnk" href="">Analytics</a> </h6>
-                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="">Settings</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="{% url 'profile' %}">Settings</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="{% url 'logout' %}">Logout</a> </h6>
 
             </div>
@@ -76,9 +76,9 @@
                         <div class="col">
                             <div class="card card2" style="width: 18rem;">
                                 <div class="card-body">
-                                  <h5 class="card-title">Total Expenditure</h5>
+                                  <h5 class="card-title">Total Expenses</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">{{total}}</small></p></div></p>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">{{sumb}}</small></p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -90,7 +90,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Total Income</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">0</p></div></p>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">{{current_user.profile.income}}</p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -98,9 +98,9 @@
                         <div class="col">
                             <div class=" card2 card" style="width: 18rem;">
                                 <div class="card-body">
-                                  <h5 class="card-title">Income - Expenditure</h5>
+                                  <h5 class="card-title">Account Balance</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text text-center"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">0</p></div></p>
+                                  <p class="card-text text-center"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall"> {{result}}</p></div></p>
                                  </div>
                               </div>
                         </div>

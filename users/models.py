@@ -11,6 +11,7 @@ class Profile(models.Model):
     names = models.CharField(blank=True, max_length=120)
     bio=models.CharField(max_length=60)
     email = models.EmailField(max_length=100, blank=True)
+    income = models.IntegerField(default=0)
    
     
     @property

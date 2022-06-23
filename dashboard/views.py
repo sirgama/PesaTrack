@@ -21,9 +21,18 @@ def dashboard(request):
     # if query_set is not None: 
     #     context['sales'] = query_set.aggregate(Sum('sales')) 
     #     return context
-    total_exp = Expenses.objects.filter(user=current_user).all().aggregate(Sum('amount')).get('amount__sum')
-    print(total_exp)
+    #.aggregate(Sum('amount')).get('amount__sum')
+    
+    total_exp = Expenses.objects.filter(user=current_user).all()
+    sumb = sum(total_exp.values_list('amount', flat=True))
+        
+    print(sumb)
+    income = current_user.profile.income
+    result = income - sumb
     context = {
+        'income':income,
+        'sumb':sumb,
+        'result':result,
         'total':total_exp,
         'expenses':expenses,
         'current_user':current_user
