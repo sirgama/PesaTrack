@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6 mt-5">
                 <div class="row ">
-                    <div class="col ms-5"> <a href="{% url 'login' %}"><p><i class="fa-solid fa-angles-left"></i>  Back to login</p></a></div>
+                    <div class="col ms-5"> <a href="{% url 'landing' %}"><p><i class="fa-solid fa-angles-left"></i>  Back to homepage</p></a></div>
                     <div class="col">
                          
                     </div>
@@ -31,7 +31,7 @@
                 <div class="row mt-5"><h6 class="text-muted ms-5">Hello! Lets help you manage your finances</h6></div>
                 <div class="row"><h1 class="ms-5 fw-bold">Sign up to PESATRACK</h1></div>
                 <div class="row ms-5 mt-3">
-                   <h6 class="text-muted">Already have an account? <a href="{% url 'register'%}"><span class="fw-bold ms-5" style="color:rgb(175, 0, 102) ; cursor:pointer;">Sign in</span></a></h6>
+                   <h6 class="text-muted">Already have an account? <a href="{% url 'login'%}"><span class="fw-bold ms-5" style="color:rgb(175, 0, 102) ; cursor:pointer;">Sign in</span></a></h6>
                 </div>
                 <div class="row m-5 "><form class=" " action="{% url 'register' %}" method="post">
                     {% csrf_token %}
