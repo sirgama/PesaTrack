@@ -1,42 +1,75 @@
 {% extends 'dashboard/xbase.html' %}
 {% load static %}
 {%load crispy_forms_tags%}
-
-
 {% block content %}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<style>
-body {
-background: rgb(212,241,244);
-background:linear-gradient(138deg, rgba(212,241,244,1) 0%, rgba(242,227,249,0.7679446778711485) 93%, rgba(228,250,246,1) 100%);
-}
-</style>
-<div class="container">
-  <div class="row">
-    
-    
-    <div class="col-md-6">
-      
-      <div class="card mt-6">
-        <div class="card-header">
-            <legend class="border-bottom mb-4 text-center">Welcome to <span class="text-warning">Pesa</span>Track</a> Registration </legend>
-        </div>
-        <div class="card-body">
-          <form  action="{% url 'register'%}" method="post">
-            {% csrf_token %}
-            {{ form|crispy }}
-            
-            <div class="form-group">
-              <input type="submit" class="btn btn-dark" value="Create Account">
+
+
+<div class="loginarea">
+    <div class="container-fluid">
+        <div class="">
+        <div class="row">
+            <div class="col-md-6 animearea">
+
+                
+                <div class="row "> 
+                    <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}"></a>
+                    <img src="{% static 'assets/signup.svg' %}" alt="" class="img-fluid img-responsive testss" >
+                </div>
+
+                
+               
             </div>
-            <input type="hidden" name="next" value="{{next}}">
-          </form>
-          <p class="mt-5">Already Have an Account, <a href="{% url 'login' %}" class="text-primary">Login</a></p>
+            <div class="col-md-6 mt-5">
+                <div class="row ">
+                    <div class="col ms-5"> <a href="{% url 'login' %}"><p><i class="fa-solid fa-angles-left"></i>  Back to login</p></a></div>
+                    <div class="col">
+                         
+                    </div>
+                </div>
+
+
+                <div class="row mt-5"><h6 class="text-muted ms-5">Hello! Lets help you manage your finances</h6></div>
+                <div class="row"><h1 class="ms-5 fw-bold">Sign up to PESATRACK</h1></div>
+                <div class="row ms-5 mt-3">
+                   <h6 class="text-muted">Already have an account? <a href="{% url 'register'%}"><span class="fw-bold ms-5" style="color:rgb(175, 0, 102) ; cursor:pointer;">Sign in</span></a></h6>
+                </div>
+                <div class="row m-5 "><form class=" " action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="mt-5">
+                        <input type="checkbox" name="check" id="">
+                        <label for="check">Send me promotional emails, deals and events</label>
+                    </div>
+                    <div class="mt-5">
+                        <input type="submit" class="mt-5 button-66" value="Create Account">
+                    </div>
+                    <input type="hidden" name="next" value="{{next}}">
+                </form></div>
+                <div class="row"></div>
+                
+
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-   
-     <div class="col-md-6 phones"><img src="/static/Images/Money income-amico.svg"></div>
-  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock %}

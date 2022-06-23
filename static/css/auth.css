@@ -6,7 +6,6 @@
 
 .animearea{
     background: rgb(212,241,244);
-    background:linear-gradient(138deg, rgba(212,241,244,1) 0%, rgba(242,227,249,0.7679446778711485) 93%, rgba(228,250,246,1) 100%);
 }
 
 
@@ -53,4 +52,8 @@
 .form-label{
     font-weight: bold;
     font-size: 20px;
+}
+
+.tests{
+    height: 20vh;
 }
