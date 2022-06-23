@@ -37,25 +37,14 @@
             <div class="container mt-5">
                 <nav class="navbar mb-5 navbar-expand-lg bg-none">
                     <div class="container-fluid">
-                      <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-chart-line"></i> Expenses</a>
+                      <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-magnifying-glass-dollar"></i> Search </a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-clock"></i>  24th June 2022</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
-                          </li>
-                        </ul>
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                              <a class="nav-link active" aria-current="page" href="#">
+                            <a class="nav-link active" aria-current="page" href="#">
                                 <form class="input-group w-auto my-auto d-none d-sm-flex" role="search" action="{% url 'search' %}">
                  
                                     <input
@@ -70,7 +59,18 @@
                                       ></i
                                     ></span>
                                   </form>
-                              </a>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-clock"></i>  24th June 2022</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                          </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#"></a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link mt-2" href="#"><i class="fa-solid fa-download"></i> Export</a>
@@ -90,7 +90,7 @@
                   <div class="container">
 
                     <div class="container card card3 mt-5">
-                        <h4 class="mt-4 mb-4"><i class="fa-solid fa-chart-line"></i>  All Expenses</h4>
+                        <h4 class="mt-4 mb-4"><i class="fa-solid fa-magnifying-glass-dollar"></i> Searched Expenses</h4>
                         <h6>Sorted by most recent first</h6>
                         <div class="card card3">
                             <table class="table table-hover">
@@ -117,7 +117,7 @@
                                 </tr>
                                   {% endfor %}
                                     {% else %}
-                                    <td colspan="5" class="table-active">You have no expenses but don't worry, you can add one <button class="button-18" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i> Add Expense</button></td>
+                                    <td colspan="5" class="table-active">Sorry, we didn't find anything, but if you're sure you spent you can  <button class="button-18" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i> Add Expense</button></td>
                                     {% endif %}
                                 </tbody>
                               </table>

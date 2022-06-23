@@ -71,3 +71,17 @@ def expenses(request):
     }
     
     return render(request, 'dashboard/expenses.html', context)
+
+@login_required
+def search(request):
+    current_user = request.user
+    if 'exp' in request.GET and request.GET["exp"]:
+        search_term = request.GET.get("exp")
+        searched_expenses = Expenses.search_by_description(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'dashboard/search.html',{"message":message,"expenses": searched_expenses,'current_user':current_user})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'dashboard/search.html',{"message":message,'current_user':current_user,})
