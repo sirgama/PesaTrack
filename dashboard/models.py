@@ -20,3 +20,8 @@ class Expenses(models.Model):
     
     def __str__(self):
         return self.description
+    
+    @classmethod
+    def search_by_description(cls,search_term):
+        captions = cls.objects.filter(description__icontains=search_term)
+        return captions
