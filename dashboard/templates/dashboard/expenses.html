@@ -22,7 +22,7 @@
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-chart-line"></i> <a class="lnk" href="{% url 'expenses' %}">Expenses</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gauge-high"></i> <a class="lnk" href="">Analytics</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="">Settings</a> </h6>
-                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="">Logout</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="{% url 'logout' %}">Logout</a> </h6>
 
             </div>
         </div>
@@ -81,7 +81,7 @@
                             <table class="table table-hover">
                                 <thead class="table-height">
                                   <tr>
-                                    <th scope="col">Number</th>
+                                    
                                     <th scope="col">Category</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Amount</th>
@@ -93,7 +93,7 @@
                                     {% for expense in expenses %}
                                     <tr>
                                     
-                                    <th scope="row">{{expense.id}}</th>
+                                    
                                     <td>{{expense.category}}</td>
                                     <td>{{expense.description}}</td>
                                     <td>{{expense.amount}}</td>
