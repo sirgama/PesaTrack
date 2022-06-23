@@ -37,7 +37,7 @@ def dashboard(request):
         'sumb':sumb,
         'result':result,
         'total':total_exp,
-        'expenses':expenses,
+        'expenses':expenses[::-1],
         'current_user':current_user
     }
     
@@ -65,7 +65,7 @@ def expenses(request):
         form = NewExpenditureForm()
         
     context = {
-        'expenses':expenses,
+        'expenses':expenses[::-1],
         'current_user':current_user,
         'form':form,
     }
