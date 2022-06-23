@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'dashboard',
     'users',
     'crispy_forms',
+    'crispy_bootstrap5',
+    'wkhtmltopdf',
     
 ]
 
@@ -129,6 +131,9 @@ cloudinary.config(
   api_secret = "bsWPFV4bZyvD622FrctRKVd18kc" 
 )
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

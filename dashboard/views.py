@@ -17,12 +17,12 @@ def dashboard(request):
     expenses = Expenses.objects.filter(user=current_user).all()
     expenses.reverse()
     if request.method == 'POST':   
-        form = IncomeForm(request.POST)        
+        form = IncomeForm(request.POST, request.FILES, instance=request.user.profile)        
         if form.is_valid:   
             form.save()   
             return redirect('dashboard')   
     else:    
-        form = IncomeForm()
+        form = IncomeForm(instance=request.user.profile)
     #.aggregate(Sum('amount')).get('amount__sum')
     
     total_exp = Expenses.objects.filter(user=current_user).all()
