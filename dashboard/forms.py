@@ -7,4 +7,4 @@ class NewExpenditureForm(forms.ModelForm):
     
     class Meta:
         model = Expenses
-        fields = ['category', 'description', 'amount']
+        fields = ['description', 'amount','category']

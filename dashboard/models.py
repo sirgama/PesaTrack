@@ -14,12 +14,14 @@ class Categories(models.Model):
 class Expenses(models.Model):
     description = models.CharField(max_length=30)
     amount = models.IntegerField(default=0)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True, null=True)
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.description
+    
+    
     
     @classmethod
     def search_by_description(cls,search_term):

@@ -13,7 +13,7 @@
                 <img src="https://res.cloudinary.com/dzhpqlsy9/image/upload/v1655910059/samples/people/default_1_sblqpj.jpg" height="110" width="110" alt="" class="img-fluid rounded-circle">
                 {% endif %}
                 
-                <h4 class="fw-bold mt-2"> Sarah Ben</h4>
+                <h4 class="fw-bold mt-2"> {{ current_user.profile.names }}</h4>
                 <h6 class="mt-4 fw-bold text-muted">@{{current_user.username}}</h6>
                 <p class="fw-bold text-muted">{{current_user.email}}</p>
                 <p class="mt-5 text-start text-muted fw-bold"><small class="text-muted">MAIN MENU</small> </p>
@@ -78,7 +78,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Total Expenditure</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">0</small></p></div></p>
+                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">{{total}}</small></p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -129,38 +129,32 @@
                         <h4 class="mt-4 mb-4"><i class="fa-solid fa-chart-line"></i>  Recent Expenses</h4>
 
                         <div class="card card3">
-                            <table class="table ">
+                            <table class="table table-hover">
                                 <thead class="table-height">
                                   <tr>
                                     <th scope="col">Number</th>
-                                    <th scope="col">Name</th>
+                                    <th scope="col">Category</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Amount</th>
                                     <th scope="col">Date</th>
                                   </tr>
                                 </thead>
                                 <tbody class="table-group-divider">
-                                  <tr>
+                                  {% if expenses %}
+                                    {% for expense in expenses %}
+                                    <tr>
+                                    
                                     <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>@mdo</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">3</th>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@twitter</td>
-                                    <td>@mdo</td>
-                                  </tr>
+                                    <td>{{expense.category}}</td>
+                                    <td>{{expense.description}}</td>
+                                    <td>{{expense.amount}}</td>
+                                    <td>{{expense.date}}</td>
+                                    
+                                </tr>
+                                  {% endfor %}
+                                    {% else %}
+                                    <td colspan="5" class="table-active">You have no expenses but don't worry, you can add one <a href="{% url 'expenses' %}"><button class="button-18" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i> Add Expense</button></a></td>
+                                    {% endif %}
                                 </tbody>
                               </table>
                         </div>

@@ -12,7 +12,7 @@ def profile(request):
         profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)        
         if profile_form.is_valid:   
             profile_form.save()   
-            return redirect('dashboard/landing')   
+            return redirect('dashboard')   
     else:    
         profile_form = ProfileUpdateForm(instance=request.user.profile)
     context = {    

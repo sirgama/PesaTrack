@@ -8,7 +8,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = CloudinaryField('image')
-    name = models.CharField(blank=True, max_length=120)
+    names = models.CharField(blank=True, max_length=120)
     bio=models.CharField(max_length=60)
     email = models.EmailField(max_length=100, blank=True)
    
