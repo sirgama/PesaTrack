@@ -1,5 +1,5 @@
 from django.db import models
-#from cloudinary.models import CloudinaryField
+from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -7,7 +7,7 @@ from django.dispatch import receiver
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to = 'profile/')
+    image = CloudinaryField('image')
     name = models.CharField(blank=True, max_length=120)
     bio=models.CharField(max_length=60)
     email = models.EmailField(max_length=100, blank=True)
