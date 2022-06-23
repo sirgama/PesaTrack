@@ -14,14 +14,14 @@
                 {% else %}
                 <img src="https://res.cloudinary.com/dzhpqlsy9/image/upload/v1655910059/samples/people/default_1_sblqpj.jpg" height="110" width="110" alt="" class="img-fluid rounded-circle">
                 {% endif %}
-                <h4 class="fw-bold mt-2"> {{ current_user.names }}</h4>
+                <h4 class="fw-bold mt-2"> {{ current_user.profile.names }}</h4>
                 <h6 class="mt-4 fw-bold text-muted">@{{current_user.username}}</h6>
                 <p class="fw-bold text-muted">{{current_user.email}}</p>
                 <p class="mt-5 text-start text-muted fw-bold"><small class="text-muted">MAIN MENU</small> </p>
                 <h6 class="mt-4 text-start m-3  menu"><i class="fa-solid fa-table-columns"></i> <a class="lnk" href="{% url 'dashboard' %}">Dashboard</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-chart-line"></i> <a class="lnk" href="{% url 'expenses' %}">Expenses</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gauge-high"></i> <a class="lnk" href="">Analytics</a> </h6>
-                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="">Settings</a> </h6>
+                <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-gear"></i> <a class="lnk" href="{% url 'profile' %}">Settings</a> </h6>
                 <h6 class="mt-4 text-start m-3 menu"><i class="fa-solid fa-right-from-bracket"></i> <a class="lnk" href="{% url 'logout' %}">Logout</a> </h6>
 
             </div>
