@@ -107,3 +107,35 @@ background: linear-gradient(138deg, rgba(212,241,244,1) 0%, rgba(242,227,249,0.7
     font-weight: 600;
 
   }
+
+  .badge2 {
+    height: 120px;
+    width: 120px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%; /* may require vendor prefixes */
+    border-top: 10px solid rgb(236, 0, 98);
+    border-right: 10px solid rgb(59, 0, 220);
+    border-bottom: 10px solid rgb(234, 238, 8);
+    border-left: 10px solid rgb(184, 104, 0);
+    font-size: 28px;
+    font-weight: 600;
+
+  }
+
+  .badge3 {
+    height: 120px;
+    width: 120px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%; /* may require vendor prefixes */
+    border-top: 10px solid rgb(107, 2, 39);
+    border-right: 10px solid rgb(103, 248, 0);
+    border-bottom: 10px solid rgb(0, 12, 141);
+    border-left: 10px solid rgb(125, 36, 4);
+    font-size: 28px;
+    font-weight: 600;
+
+  }

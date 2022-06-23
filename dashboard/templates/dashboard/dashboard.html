@@ -1,5 +1,6 @@
 {% extends 'dashboard/xbase.html' %}
 {% load static %}
+{% load crispy_forms_tags %} 
 
 {% block content %}
 <div class=" ">
@@ -60,7 +61,7 @@
                               <a class="nav-link mt-2" href="#"><i class="fa-solid fa-download"></i> Export</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#"><button class="button-18" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i> Add Income</button></a>
+                              <!-- <a class="nav-link" href="#"><button class="button-18" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i> Add Income</button></a> -->
                             </li>
                           </ul>
                         <span class="nav-item">
@@ -78,7 +79,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Total Expenses</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall">{{sumb}}</small></p></div></p>
+                                  <p class="card-text"><div class="badge3 text-center m-5"><p class="text-center mt-md-3 tsmall">{{sumb}}</small></p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -100,7 +101,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Account Balance</h5>
                                   <h6 class="card-subtitle mb-2 text-muted"></h6>
-                                  <p class="card-text text-center"><div class="badge text-center m-5"><p class="text-center mt-md-3 tsmall"> {{result}}</p></div></p>
+                                  <p class="card-text text-center"><div class="badge2 text-center m-5"><p class="text-center mt-md-3 tsmall"> {{result}}</p></div></p>
                                  </div>
                               </div>
                         </div>
@@ -181,12 +182,17 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+            <form class="container" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                    {{ form|crispy }}
+                
+                <div class="form-group text-center">
+                    <button class="btn button-18 mt-3" type="submit">Add Income</button>
+                </div>
+            </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add</button>
-        </div>
+        
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import Expenses, Categories
-from .forms import NewExpenditureForm
+from .forms import IncomeForm, NewExpenditureForm
 from django.db.models import Sum
 from django.contrib.auth.decorators import login_required
 
@@ -16,11 +16,13 @@ def dashboard(request):
     current_user = request.user
     expenses = Expenses.objects.filter(user=current_user).all()
     expenses.reverse()
-    # query_set = self.get_queryset() 
-    # context = super(FinalView, self).get_context_data(**kwargs) 
-    # if query_set is not None: 
-    #     context['sales'] = query_set.aggregate(Sum('sales')) 
-    #     return context
+    if request.method == 'POST':   
+        form = IncomeForm(request.POST)        
+        if form.is_valid:   
+            form.save()   
+            return redirect('dashboard')   
+    else:    
+        form = IncomeForm()
     #.aggregate(Sum('amount')).get('amount__sum')
     
     total_exp = Expenses.objects.filter(user=current_user).all()
@@ -30,6 +32,7 @@ def dashboard(request):
     income = current_user.profile.income
     result = income - sumb
     context = {
+        'form':form,
         'income':income,
         'sumb':sumb,
         'result':result,
