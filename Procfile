@@ -1,0 +1,1 @@
+web: pesatrack.wsgi --log-file -
