@@ -1,1 +1,1 @@
-web: pesatrack.wsgi --log-file -
+web: gunicorn pesatrack.wsgi --log-file -
